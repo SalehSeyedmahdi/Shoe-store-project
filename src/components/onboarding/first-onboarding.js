@@ -4,11 +4,11 @@ export function FirstOnboarding() {
 	return El({
 		element: "div",
 		className:
-			"w-full h-[926px] flex flex-col items-center justify-start gap-[306px] bg-[#ffffff]",
+			"w-[428px] h-[926px] flex flex-col items-center justify-start gap-[306px] bg-[#ffffff]",
 		children: [
 			El({
 				element: "div",
-				className: "flex justify-center items-center gap-[12px] mt-[392px]",
+				className: "flex justify-center items-center gap-[12px] mt-[360.5px]",
 				children: [
 					El({
 						element: "div",
