@@ -1,4 +1,5 @@
 import { El } from "../../utils/el.js";
+import { router } from "../../utils/router.js";
 
 export function ThirdOnboarding() {
 	return El({
@@ -28,7 +29,15 @@ export function ThirdOnboarding() {
 						element: "button",
 						innerText: "Next",
 						className:
-							"w-[380px] h-[47px] text-[14px] text-[#FFFFFF] font-medium bg-[#212529] rounded-[30px]",
+							"w-[380px] h-[47px] text-[14px] text-[#FFFFFF] font-medium bg-[#212529] cursor-pointer rounded-[30px]",
+						eventListener: [
+							{
+								event: "click",
+								callback: () => {
+									router.navigate("./fourth-onboarding.js");
+								},
+							},
+						],
 					}),
 				],
 			}),

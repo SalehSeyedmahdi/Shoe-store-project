@@ -35,7 +35,7 @@ export function FirstOnboarding() {
 				element: "img",
 				className: "w-[48px] h-[48px]",
 				restAttrs: {
-					src: "../../../public/images/loading.png",
+					src: "../../../public/images/loading.svg",
 				},
 			}),
 		],

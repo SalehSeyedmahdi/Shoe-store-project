@@ -2,6 +2,7 @@ import { FifthOnboarding } from "../src/components/onboarding/fifth-onboarding.j
 import { FirstOnboarding } from "../src/components/onboarding/first-onboarding.js";
 import { FourthOnboarding } from "../src/components/onboarding/fourth-onboarding.js";
 import { ThirdOnboarding } from "../src/components/onboarding/third-onboarding.js";
+import { SecondOnboarding } from "./components/onboarding/second-onboarding.js";
 import "./style/style.css";
 
 const app = document.getElementById("app");
@@ -15,3 +16,6 @@ app.append(FourthOnboarding());
 
 app.innerHTML = "";
 app.append(FifthOnboarding());
+
+app.innerHTML = "";
+app.append(SecondOnboarding());

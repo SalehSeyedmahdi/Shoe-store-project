@@ -28,7 +28,7 @@ export function FifthOnboarding() {
 						element: "button",
 						innerText: "Get Started",
 						className:
-							"w-[380px] h-[47px] text-[14px] text-[#FFFFFF] font-medium bg-[#212529] rounded-[30px]",
+							"w-[380px] h-[47px] text-[14px] text-[#FFFFFF] font-medium bg-[#212529] cursor-pointer rounded-[30px]",
 					}),
 				],
 			}),
