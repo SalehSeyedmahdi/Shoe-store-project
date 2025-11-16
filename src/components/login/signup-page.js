@@ -1,8 +1,7 @@
 import { El } from "../../utils/el.js";
-import { FifthOnboarding } from "../onboarding/fifth-onboarding.js";
-import { SignupPage } from "./signup-page.js";
+import { LoginPage } from "./login-page.js";
 
-export function LoginPage() {
+export function SignupPage() {
 	return El({
 		element: "div",
 		className:
@@ -23,7 +22,7 @@ export function LoginPage() {
 							{
 								event: "click",
 								callback: () => {
-									(app.innerText = ""), app.append(FifthOnboarding());
+									(app.innerText = ""), app.append(LoginPage());
 								},
 							},
 						],
@@ -41,7 +40,7 @@ export function LoginPage() {
 						children: [
 							El({
 								element: "p",
-								innerText: "login to Your Account",
+								innerText: "Signup to Your Account",
 								className:
 									"font-semibold text-center text-[32px] text-[#152536]",
 							}),
@@ -95,14 +94,14 @@ export function LoginPage() {
 									}),
 									El({
 										element: "p",
-										innerText: "Signup",
+										innerText: "Login",
 										className:
 											"font-medium text-[#000000] text-[14px] cursor-pointer",
 										eventListener: [
 											{
 												event: "click",
 												callback: () => {
-													(app.innerText = ""), app.append(SignupPage());
+													(app.innerText = ""), app.append(LoginPage());
 												},
 											},
 										],
@@ -115,7 +114,7 @@ export function LoginPage() {
 			}),
 			El({
 				element: "button",
-				innerText: "Signin",
+				innerText: "Signup",
 				className:
 					"w-[380px] h-[47px] text-[14px] text-[#FFFFFF] font-medium bg-[#212529] cursor-pointer rounded-[30px]",
 			}),

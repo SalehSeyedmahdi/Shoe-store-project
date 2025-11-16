@@ -1,5 +1,5 @@
 import { El } from "../../utils/el.js";
-import { router } from "../../utils/router.js";
+import { FifthOnboarding } from "./fifth-onboarding.js";
 
 export function FourthOnboarding() {
 	return El({
@@ -26,17 +26,30 @@ export function FourthOnboarding() {
 							"leading-snug font-semibold text-[32px] text-[#000000] text-center",
 					}),
 					El({
-						element: "button",
-						innerText: "Next",
-						className:
-							"w-[380px] h-[47px] text-[14px] text-[#FFFFFF] font-medium bg-[#212529] cursor-pointer rounded-[30px]",
-						eventListener: [
-							{
-								event: "click",
-								callback: () => {
-									router.navigate("./fifth-onboarding.js");
+						element: "div",
+						className: "flex flex-col items-center gap-[40px]",
+						children: [
+							El({
+								element: "img",
+								className: "w-[102px] h-[23px]",
+								restAttrs: {
+									src: "../../../public/images/second-swiper.png",
 								},
-							},
+							}),
+							El({
+								element: "button",
+								innerText: "Next",
+								className:
+									"w-[380px] h-[47px] text-[14px] text-[#FFFFFF] font-medium bg-[#212529] cursor-pointer rounded-[30px]",
+								eventListener: [
+									{
+										event: "click",
+										callback: () => {
+											(app.innerText = ""), app.append(FifthOnboarding());
+										},
+									},
+								],
+							}),
 						],
 					}),
 				],

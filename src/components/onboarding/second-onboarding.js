@@ -1,7 +1,8 @@
 import { El } from "../../utils/el.js";
+import { ThirdOnboarding } from "./third-onboarding.js";
 
 export function SecondOnboarding() {
-	return El({
+	const container = El({
 		element: "div",
 		className:
 			"w-[428px] h-[926px] bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0.7)_100%),url('../../../public/images/Wallpaper.jpg')] bg-center bg-cover flex flex-col items-start justify-end gap-[18px] p-[35px] pb-[70px]",
@@ -30,4 +31,10 @@ export function SecondOnboarding() {
 			}),
 		],
 	});
+	function changePage() {
+		app.innerText = "";
+		app.append(ThirdOnboarding());
+	}
+	setTimeout(changePage, 5000);
+	return container;
 }

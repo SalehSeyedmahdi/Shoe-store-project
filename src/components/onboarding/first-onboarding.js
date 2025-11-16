@@ -1,7 +1,8 @@
 import { El } from "../../utils/el.js";
+import { SecondOnboarding } from "../onboarding/second-onboarding.js";
 
 export function FirstOnboarding() {
-	return El({
+	const container = El({
 		element: "div",
 		className:
 			"w-[428px] h-[926px] flex flex-col items-center justify-start gap-[306px] bg-[#ffffff]",
@@ -40,4 +41,10 @@ export function FirstOnboarding() {
 			}),
 		],
 	});
+	function changePage() {
+		app.innerText = "";
+		app.append(SecondOnboarding());
+	}
+	setTimeout(changePage, 5000);
+	return container;
 }
