@@ -27,7 +27,7 @@ export function FourthOnboarding() {
 					}),
 					El({
 						element: "div",
-						className: "flex flex-col items-center gap-[40px]",
+						className: "flex flex-col items-center gap-[35px]",
 						children: [
 							El({
 								element: "img",

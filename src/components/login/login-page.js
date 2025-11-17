@@ -1,5 +1,6 @@
 import { El } from "../../utils/el.js";
-import { FifthOnboarding } from "../onboarding/fifth-onboarding.js";
+import { ThirdOnboarding } from "../onboarding/third-onboarding.js";
+import { LoginLogic } from "./login-logic.js";
 import { SignupPage } from "./signup-page.js";
 
 export function LoginPage() {
@@ -7,6 +8,9 @@ export function LoginPage() {
 		element: "div",
 		className:
 			"w-[428px] h-[926px] relative flex flex-col items-center justify-between gap-0 bg-[#ffffff] p-[32px] pt-[132px]",
+		restAttrs: {
+			id: "container",
+		},
 		children: [
 			El({
 				element: "div",
@@ -23,7 +27,7 @@ export function LoginPage() {
 							{
 								event: "click",
 								callback: () => {
-									(app.innerText = ""), app.append(FifthOnboarding());
+									(app.innerText = ""), app.append(ThirdOnboarding());
 								},
 							},
 						],
@@ -55,7 +59,8 @@ export function LoginPage() {
 										children: [
 											El({
 												element: "img",
-												className: "w-[14px] h-[14px] absolute left-4",
+												className:
+													"w-[14px] h-[14px] absolute left-4 opacity-50",
 												restAttrs: {
 													src: "../../../public/images/envelope-fill.png",
 												},
@@ -67,6 +72,7 @@ export function LoginPage() {
 												restAttrs: {
 													placeholder: "Username",
 													type: "username",
+													id: "username",
 												},
 											}),
 										],
@@ -77,7 +83,8 @@ export function LoginPage() {
 										children: [
 											El({
 												element: "img",
-												className: "w-[14px] h-[14px] absolute left-4",
+												className:
+													"w-[17px] h-[17px] absolute left-4 opacity-50",
 												restAttrs: {
 													src: "../../../public/images/lock-fill.png",
 												},
@@ -89,6 +96,15 @@ export function LoginPage() {
 												restAttrs: {
 													placeholder: "Password",
 													type: "password",
+													id: "password",
+												},
+											}),
+											El({
+												element: "img",
+												className:
+													"w-[17px] h-[17px] absolute right-4 opacity-50",
+												restAttrs: {
+													src: "../../../public/images/eye-slash-fill.png",
 												},
 											}),
 										],
@@ -118,6 +134,17 @@ export function LoginPage() {
 				innerText: "Signin",
 				className:
 					"w-[380px] h-[47px] text-[14px] text-[#FFFFFF] font-medium bg-[#212529] cursor-pointer rounded-[30px]",
+				eventListener: [
+					{
+						event: "click",
+						callback: () => {
+							LoginLogic();
+						},
+					},
+				],
+				restAttrs: {
+					id: "login-btn",
+				},
 			}),
 		],
 	});

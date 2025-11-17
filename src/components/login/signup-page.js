@@ -54,7 +54,8 @@ export function SignupPage() {
 										children: [
 											El({
 												element: "img",
-												className: "w-[14px] h-[14px] absolute left-4",
+												className:
+													"w-[14px] h-[14px] absolute left-4 opacity-50",
 												restAttrs: {
 													src: "../../../public/images/envelope-fill.png",
 												},
@@ -76,7 +77,8 @@ export function SignupPage() {
 										children: [
 											El({
 												element: "img",
-												className: "w-[14px] h-[14px] absolute left-4",
+												className:
+													"w-[17px] h-[17px] absolute left-4 opacity-50",
 												restAttrs: {
 													src: "../../../public/images/lock-fill.png",
 												},
@@ -84,10 +86,18 @@ export function SignupPage() {
 											El({
 												element: "input",
 												className:
-													"w-[380px] h-[37px] bg-[#FAFAFA] placeholder:text-[14px] placeholder:font-normal placeholder:text-[#6C757D] p-3 pl-10 rounded-[4px]",
+													"w-[380px] h-[37px] bg-[#FAFAFA] placeholder:text-[14px] placeholder:font-normal placeholder:text-[#6C757D] p-3 pl-10 pr-10 rounded-[4px]",
 												restAttrs: {
 													placeholder: "Password",
 													type: "password",
+												},
+											}),
+											El({
+												element: "img",
+												className:
+													"w-[17px] h-[17px] absolute right-4 opacity-50",
+												restAttrs: {
+													src: "../../../public/images/eye-slash-fill.png",
 												},
 											}),
 										],
