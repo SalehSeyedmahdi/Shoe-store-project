@@ -1,4 +1,5 @@
 import { El } from "../../utils/el.js";
+import { HomePage } from "../home/home.js";
 
 export function LoginLogic() {
 	const userName = document.getElementById("username");
@@ -66,6 +67,7 @@ export function LoginLogic() {
 				const response = await data.json();
 				console.log(response);
 				app.innerText = "";
+				app.append(HomePage());
 			} catch (error) {
 				console.error(error);
 				requestError();

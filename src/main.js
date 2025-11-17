@@ -1,5 +1,5 @@
-import { SignupPage } from "./components/login/signup-page.js";
+import { FirstOnboarding } from "../src/components/onboarding/first-onboarding.js";
 import "./style/style.css";
 
 const app = document.getElementById("app");
-app.append(SignupPage());
+app.append(FirstOnboarding());
