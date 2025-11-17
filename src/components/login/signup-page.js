@@ -1,4 +1,5 @@
 import { El } from "../../utils/el.js";
+import { SignupLogic } from "../login/signup-logic.js";
 import { LoginPage } from "./login-page.js";
 
 export function SignupPage() {
@@ -6,6 +7,9 @@ export function SignupPage() {
 		element: "div",
 		className:
 			"w-[428px] h-[926px] relative flex flex-col items-center justify-between gap-0 bg-[#ffffff] p-[32px] pt-[132px]",
+		restAttrs: {
+			id: "container",
+		},
 		children: [
 			El({
 				element: "div",
@@ -67,6 +71,7 @@ export function SignupPage() {
 												restAttrs: {
 													placeholder: "Username",
 													type: "username",
+													id: "username",
 												},
 											}),
 										],
@@ -90,6 +95,7 @@ export function SignupPage() {
 												restAttrs: {
 													placeholder: "Password",
 													type: "password",
+													id: "password",
 												},
 											}),
 											El({
@@ -127,6 +133,17 @@ export function SignupPage() {
 				innerText: "Signup",
 				className:
 					"w-[380px] h-[47px] text-[14px] text-[#FFFFFF] font-medium bg-[#212529] cursor-pointer rounded-[30px]",
+				eventListener: [
+					{
+						event: "click",
+						callback: () => {
+							SignupLogic();
+						},
+					},
+				],
+				restAttrs: {
+					id: "signup-btn",
+				},
 			}),
 		],
 	});
