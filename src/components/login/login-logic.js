@@ -66,6 +66,8 @@ export function LoginLogic() {
 				}
 				const response = await data.json();
 				console.log(response);
+				localStorage.setItem("token", response.token);
+				localStorage.setItem("username", response.user.username);
 				app.innerText = "";
 				app.append(HomePage());
 			} catch (error) {

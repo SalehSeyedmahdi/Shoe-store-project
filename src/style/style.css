@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.brands::-webkit-scrollbar {
+	display: none;
+}

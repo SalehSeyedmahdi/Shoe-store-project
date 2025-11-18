@@ -17,7 +17,7 @@ export function Header() {
 					}),
 					El({
 						element: "p",
-						innerText: "Saleh Seyedmahdi",
+						innerText: localStorage.getItem("username"),
 						className: "font-bold text-[16px] text-[#152536]",
 					}),
 				],

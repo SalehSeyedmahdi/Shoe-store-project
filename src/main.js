@@ -1,4 +1,4 @@
-import { FirstOnboarding } from "../src/components/onboarding/first-onboarding.js";
+import { FirstOnboarding } from "./components/onboarding/first-onboarding";
 import "./style/style.css";
 
 const app = document.getElementById("app");

@@ -1,6 +1,8 @@
 import { El } from "../../utils/el.js";
 import { Footer } from "./footer.js";
 import { Header } from "./header.js";
+import { BrandFilter } from "./brand-filter.js";
+import { productLogic } from "./products-logic.js";
 import { SearchInput } from "./search-input.js";
 
 export function HomePage() {
@@ -12,6 +14,6 @@ export function HomePage() {
 			id: "home",
 		},
 	});
-	home.append(Header(), SearchInput(), Footer());
+	home.append(Header(), SearchInput(), BrandFilter(), productLogic(), Footer());
 	return home;
 }
