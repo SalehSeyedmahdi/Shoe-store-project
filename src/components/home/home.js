@@ -1,7 +1,7 @@
 import { El } from "../../utils/el.js";
 import { Footer } from "./footer.js";
 import { Header } from "./header.js";
-import { Search } from "./search.js";
+import { SearchInput } from "./search-input.js";
 
 export function HomePage() {
 	const home = El({
@@ -12,6 +12,6 @@ export function HomePage() {
 			id: "home",
 		},
 	});
-	home.append(Header(), Search(), Footer());
+	home.append(Header(), SearchInput(), Footer());
 	return home;
 }

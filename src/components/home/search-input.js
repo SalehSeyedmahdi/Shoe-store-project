@@ -1,6 +1,6 @@
 import { El } from "../../utils/el.js";
 
-export function Search() {
+export function SearchInput() {
 	return El({
 		element: "div",
 		className: "w-[428px] absolute top-[88px]",
