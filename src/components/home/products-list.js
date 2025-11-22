@@ -1,4 +1,5 @@
 import { El } from "../../utils/el.js";
+import { SingleProductLogic } from "../single-product/single-product-logic.js";
 
 export function ProductList() {
 	const container = El({
@@ -30,6 +31,20 @@ export function ProductList() {
 					element: "div",
 					className:
 						"w-[182px] h-[244px] bg-[#FFFFFF] flex flex-col gap-[12px] cursor-pointer",
+					restAttrs: {
+						id: item.id,
+					},
+					eventListener: [
+						{
+							event: "click",
+							callback: (e) => {
+								e.target.id = item.id;
+								console.log(item.id);
+								const itemId = e.target.id;
+								SingleProductLogic(itemId);
+							},
+						},
+					],
 					children: [
 						El({
 							element: "img",

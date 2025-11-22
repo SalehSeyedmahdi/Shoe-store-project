@@ -1,5 +1,5 @@
-import { LoginPage } from "./components/login/login-page.js";
+import { FirstOnboarding } from "./components/onboarding/first-onboarding.js";
 import "./style/style.css";
 
 const app = document.getElementById("app");
-app.append(LoginPage());
+app.append(FirstOnboarding());
