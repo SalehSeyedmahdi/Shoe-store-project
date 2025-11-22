@@ -123,13 +123,13 @@ export function SingleProductPage(imageURL, name, price) {
 											}),
 											El({
 												element: "div",
-												className: "flex gap-3",
+												className: "flex gap-2",
 												children: [
 													El({
 														element: "div",
 														innerText: "41",
 														className:
-															"w-[20px] h-[20px] flex justify-center items-center cursor-pointer font-bold text-[14px] text-[#717171] border border-[#717171] hover:text-[#FFFFFF] hover:bg-[#000000] hover:border-[#000000] rounded-full p-4 size-option",
+															"w-[20px] h-[20px] flex justify-center items-center cursor-pointer font-bold text-[14px] text-[#FFFFFF] border border-[#717171] hover:text-[#FFFFFF] bg-[#000000] rounded-full p-4 size-option",
 														eventListener: [
 															{
 																event: "click",
@@ -236,32 +236,114 @@ export function SingleProductPage(imageURL, name, price) {
 											}),
 											El({
 												element: "div",
-												className: "flex gap-3",
+												className: "flex gap-2",
 												children: [
 													El({
 														element: "div",
 														className:
-															"w-[20px] h-[20px] flex justify-center items-center bg-[#f3f3f3] cursor-pointer rounded-full p-4",
+															"w-[20px] h-[20px] flex justify-center items-center text-[#000000] bg-[#f3f3f3] cursor-pointer rounded-full p-4 colors",
+														innerText: "✓",
+														eventListener: [
+															{
+																event: "click",
+																callback: (e) => {
+																	const allColors =
+																		document.querySelectorAll(".colors");
+
+																	allColors.forEach((color) => {
+																		color.innerText = "";
+																	});
+
+																	const target = e.currentTarget;
+																	target.innerText = "✓";
+																},
+															},
+														],
 													}),
 													El({
 														element: "div",
 														className:
-															"w-[20px] h-[20px] flex justify-center items-center bg-[red] cursor-pointer rounded-full p-4",
+															"w-[20px] h-[20px] flex justify-center items-center bg-[red] cursor-pointer rounded-full p-4 colors",
+														eventListener: [
+															{
+																event: "click",
+																callback: (e) => {
+																	const allColors =
+																		document.querySelectorAll(".colors");
+
+																	allColors.forEach((color) => {
+																		color.innerText = "";
+																	});
+
+																	const target = e.currentTarget;
+																	target.innerText = "✓";
+																},
+															},
+														],
 													}),
 													El({
 														element: "div",
 														className:
-															"w-[20px] h-[20px] flex justify-center items-center bg-[#7a5448] cursor-pointer rounded-full p-4",
+															"w-[20px] h-[20px] flex justify-center items-center bg-[#7a5448] cursor-pointer rounded-full p-4 colors",
+														eventListener: [
+															{
+																event: "click",
+																callback: (e) => {
+																	const allColors =
+																		document.querySelectorAll(".colors");
+
+																	allColors.forEach((color) => {
+																		color.innerText = "";
+																	});
+
+																	const target = e.currentTarget;
+																	target.innerText = "✓";
+																},
+															},
+														],
 													}),
 													El({
 														element: "div",
 														className:
-															"w-[20px] h-[20px] flex justify-center items-center bg-[black] cursor-pointer rounded-full p-4",
+															"w-[20px] h-[20px] flex justify-center items-center bg-[black] cursor-pointer rounded-full p-4 colors",
+														eventListener: [
+															{
+																event: "click",
+																callback: (e) => {
+																	const allColors =
+																		document.querySelectorAll(".colors");
+
+																	allColors.forEach((color) => {
+																		color.innerText = "";
+																	});
+
+																	const target = e.currentTarget;
+																	target.innerText = "✓";
+																	target.style.color = "#FFFFFF";
+																},
+															},
+														],
 													}),
 													El({
 														element: "div",
 														className:
-															"w-[20px] h-[20px] flex justify-center items-center bg-[#1a96f0] cursor-pointer rounded-full p-4",
+															"w-[20px] h-[20px] flex justify-center items-center bg-[#1a96f0] cursor-pointer rounded-full p-4 colors",
+														eventListener: [
+															{
+																event: "click",
+																callback: (e) => {
+																	const allColors =
+																		document.querySelectorAll(".colors");
+
+																	allColors.forEach((color) => {
+																		color.innerText = "";
+																	});
+
+																	const target = e.currentTarget;
+																	target.innerText = "✓";
+																},
+															},
+														],
 													}),
 												],
 											}),
@@ -312,7 +394,7 @@ export function SingleProductPage(imageURL, name, price) {
 					El({
 						element: "div",
 						className:
-							"flex items-center justify-between absolute bottom-[35px] right-[24px] left-[24px] gap-10",
+							"flex items-center justify-between absolute bottom-[30px] right-[24px] left-[24px] gap-10",
 						children: [
 							El({
 								element: "div",
