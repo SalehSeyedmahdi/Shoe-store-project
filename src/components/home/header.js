@@ -1,4 +1,5 @@
 import { El } from "../../utils/el.js";
+import { getGreeting } from "../../utils/greeting.js";
 
 export function Header() {
 	return El({
@@ -12,7 +13,7 @@ export function Header() {
 				children: [
 					El({
 						element: "p",
-						innerText: "Good Morning 👋",
+						innerText: getGreeting(),
 						className: "font-medium text-[16px] text-[#757475]",
 					}),
 					El({
