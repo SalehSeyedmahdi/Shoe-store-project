@@ -44,8 +44,8 @@ export function BrandFilter(selectedBrand) {
 
 						// ریست اسکرول Home
 						store.setState("homeState", {
-							scroll: 0,
-							brandScroll: 0,
+							scroll: null,
+							brandScroll: null,
 						});
 
 						// reset کردن همه دکمه‌ها
