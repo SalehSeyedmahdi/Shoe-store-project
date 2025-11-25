@@ -44,6 +44,7 @@ export function ProductList() {
 					{
 						event: "click",
 						callback: () => {
+							localStorage.setItem("selectedItemId", item.id);
 							store.setState("homeState", {
 								selectedBrands: store.getState("filteredBrand"),
 								scroll: container.scrollTop,

@@ -1,5 +1,6 @@
 import { El } from "../../utils/el";
 import { HomePage } from "../home/home.js";
+import { addToCart } from "./post-cart.js";
 
 export function SingleProductPage(imageURL, name, price) {
 	const singleProduct = El({
@@ -371,6 +372,31 @@ export function SingleProductPage(imageURL, name, price) {
 									El({
 										element: "img",
 										className: "w-[18px] h-[18px] cursor-pointer",
+										eventListener: [
+											{
+												event: "click",
+												callback: () => {
+													const countProducts =
+														document.querySelector(".count-products");
+													let count = parseInt(countProducts.innerText);
+													if (count > 1) {
+														count -= 1;
+														countProducts.innerText = count;
+													} else {
+														const minimumMessage = El({
+															element: "div",
+															className:
+																"w-full h-[75px] flex items-center justify-center z-999 absolute top-0 right-0 left-0 font-semibold text-[#FFFFFF] bg-[red] rounded-xl",
+															innerText: "Minimum quantity is 1",
+														});
+														app.append(minimumMessage);
+														setTimeout(() => {
+															minimumMessage.remove();
+														}, 2000);
+													}
+												},
+											},
+										],
 										restAttrs: {
 											src: "../../../public/images/minus.png",
 										},
@@ -379,10 +405,36 @@ export function SingleProductPage(imageURL, name, price) {
 										element: "p",
 										innerText: "1",
 										className: "font-bold text-[18px]",
+										restAttrs: { class: "count-products" },
 									}),
 									El({
 										element: "img",
 										className: "w-[18px] h-[18px] cursor-pointer",
+										eventListener: [
+											{
+												event: "click",
+												callback: () => {
+													const countProducts =
+														document.querySelector(".count-products");
+													let count = parseInt(countProducts.innerText);
+													if (count < 5) {
+														count += 1;
+														countProducts.innerText = count;
+													} else {
+														const maximumMessage = El({
+															element: "div",
+															className:
+																"w-full h-[75px] flex items-center justify-center z-999 absolute top-0 right-0 left-0 font-semibold text-[#FFFFFF] bg-[red] rounded-xl",
+															innerText: "Maximum quantity reached",
+														});
+														app.append(maximumMessage);
+														setTimeout(() => {
+															maximumMessage.remove();
+														}, 2000);
+													}
+												},
+											},
+										],
 										restAttrs: {
 											src: "../../../public/images/plus.png",
 										},
@@ -416,6 +468,14 @@ export function SingleProductPage(imageURL, name, price) {
 								element: "div",
 								className:
 									"flex justify-center items-center gap-4 font-semibold text-[#FFFFFF] bg-[#101010] shadow-xl rounded-4xl p-4 pr-16 pl-16 cursor-pointer",
+								eventListener: [
+									{
+										event: "click",
+										callback: () => {
+											addToCart();
+										},
+									},
+								],
 								children: [
 									El({
 										element: "img",
