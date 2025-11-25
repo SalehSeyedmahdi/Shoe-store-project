@@ -1,6 +1,71 @@
 import { El } from "../../utils/el.js";
+import { store } from "../../utils/store.js";
 
-export function BrandFilter() {
+export function BrandFilter(selectedBrand) {
+	const brands = [
+		"All",
+		"Nike",
+		"Adidas",
+		"Puma",
+		"Asics",
+		"Rebook",
+		"New Balance",
+		"Converse",
+		"Hushpuppies",
+	];
+
+	// پیش‌فرض برای اولین بار
+	if (!selectedBrand) {
+		selectedBrand = "All";
+		store.setState("filteredBrand", "All");
+	}
+
+	function BrandButton(name) {
+		const isActive = name === selectedBrand;
+
+		return El({
+			element: "div",
+			innerText: name,
+			className: `
+				flex justify-center items-center
+				font-semibold text-[16px]
+				cursor-pointer rounded-[25px]
+				border-[2px] border-[#343A40]
+				p-[10px] pl-[20px] pr-[20px] brands
+				text-nowrap
+				${isActive ? "bg-[#343A40] text-[#FFFFFF]" : "bg-[#FFFFFF] text-[#343A40]"}
+			`,
+			eventListener: [
+				{
+					event: "click",
+					callback: (e) => {
+						// اگر همین برند است کاری نکن
+						if (name === store.getState("filteredBrand")) return;
+
+						// ریست اسکرول Home
+						store.setState("homeState", {
+							scroll: null,
+							brandScroll: null,
+						});
+
+						// reset کردن همه دکمه‌ها
+						document.querySelectorAll(".brands").forEach((b) => {
+							b.style.backgroundColor = "#FFFFFF";
+							b.style.color = "#343A40";
+						});
+
+						// فعال کردن این دکمه
+						e.currentTarget.style.backgroundColor = "#343A40";
+						e.currentTarget.style.color = "#FFFFFF";
+
+						// تغییر فیلتر برند → ProductList خودکار رفرش می‌شود
+						store.setState("filteredBrand", name);
+					},
+				},
+			],
+		});
+	}
+
 	return El({
 		element: "div",
 		className:
@@ -13,216 +78,8 @@ export function BrandFilter() {
 			}),
 			El({
 				element: "div",
-				className: "w-full flex gap-[12px] overflow-x-scroll brands",
-				children: [
-					El({
-						element: "div",
-						innerText: "All",
-						className:
-							"flex justify-center items-center font-semibold text-[16px] text-[#FFFFFF] bg-[#343A40] border-[2px] border-[#343A40] hover:bg-[#343A40] hover:text-[#FFFFFF] cursor-pointer rounded-[25px] p-[10px] pl-[20px] pr-[20px] brands",
-						eventListener: [
-							{
-								event: "click",
-								callback: (e) => {
-									const allBrands = document.querySelectorAll(".brands");
-
-									allBrands.forEach((s) => {
-										s.style.backgroundColor = "#FFFFFF";
-										s.style.color = "#343A40";
-									});
-
-									const target = e.currentTarget;
-									target.style.backgroundColor = "#343A40";
-									target.style.color = "#FFFFFF";
-								},
-							},
-						],
-					}),
-					El({
-						element: "div",
-						innerText: "Nike",
-						className:
-							"flex justify-center items-center font-semibold text-[16px] text-[#343A40] border-[2px] border-[#343A40] hover:bg-[#343A40] hover:text-[#FFFFFF] cursor-pointer rounded-[25px] p-[10px] pl-[20px] pr-[20px] brands",
-						eventListener: [
-							{
-								event: "click",
-								callback: (e) => {
-									const allBrands = document.querySelectorAll(".brands");
-
-									allBrands.forEach((s) => {
-										s.style.backgroundColor = "#FFFFFF";
-										s.style.color = "#343A40";
-									});
-
-									const target = e.currentTarget;
-									target.style.backgroundColor = "#343A40";
-									target.style.color = "#FFFFFF";
-								},
-							},
-						],
-					}),
-					El({
-						element: "div",
-						innerText: "Adidas",
-						className:
-							"flex justify-center items-center font-semibold text-[16px] text-[#343A40] border-[2px] border-[#343A40] hover:bg-[#343A40] hover:text-[#FFFFFF] cursor-pointer rounded-[25px] p-[10px] pl-[20px] pr-[20px] brands",
-						eventListener: [
-							{
-								event: "click",
-								callback: (e) => {
-									const allBrands = document.querySelectorAll(".brands");
-
-									allBrands.forEach((s) => {
-										s.style.backgroundColor = "#FFFFFF";
-										s.style.color = "#343A40";
-									});
-
-									const target = e.currentTarget;
-									target.style.backgroundColor = "#343A40";
-									target.style.color = "#FFFFFF";
-								},
-							},
-						],
-					}),
-					El({
-						element: "div",
-						innerText: "Puma",
-						className:
-							"flex justify-center items-center font-semibold text-[16px] text-[#343A40] border-[2px] border-[#343A40] hover:bg-[#343A40] hover:text-[#FFFFFF] cursor-pointer rounded-[25px] p-[10px] pl-[20px] pr-[20px] brands",
-						eventListener: [
-							{
-								event: "click",
-								callback: (e) => {
-									const allBrands = document.querySelectorAll(".brands");
-
-									allBrands.forEach((s) => {
-										s.style.backgroundColor = "#FFFFFF";
-										s.style.color = "#343A40";
-									});
-
-									const target = e.currentTarget;
-									target.style.backgroundColor = "#343A40";
-									target.style.color = "#FFFFFF";
-								},
-							},
-						],
-					}),
-					El({
-						element: "div",
-						innerText: "Asics",
-						className:
-							"flex justify-center items-center font-semibold text-[16px] text-[#343A40] border-[2px] border-[#343A40] hover:bg-[#343A40] hover:text-[#FFFFFF] cursor-pointer rounded-[25px] p-[10px] pl-[20px] pr-[20px] brands",
-						eventListener: [
-							{
-								event: "click",
-								callback: (e) => {
-									const allBrands = document.querySelectorAll(".brands");
-
-									allBrands.forEach((s) => {
-										s.style.backgroundColor = "#FFFFFF";
-										s.style.color = "#343A40";
-									});
-
-									const target = e.currentTarget;
-									target.style.backgroundColor = "#343A40";
-									target.style.color = "#FFFFFF";
-								},
-							},
-						],
-					}),
-					El({
-						element: "div",
-						innerText: "Rebook",
-						className:
-							"flex justify-center items-center font-semibold text-[16px] text-[#343A40] border-[2px] border-[#343A40] hover:bg-[#343A40] hover:text-[#FFFFFF] cursor-pointer rounded-[25px] p-[10px] pl-[20px] pr-[20px] brands",
-						eventListener: [
-							{
-								event: "click",
-								callback: (e) => {
-									const allBrands = document.querySelectorAll(".brands");
-
-									allBrands.forEach((s) => {
-										s.style.backgroundColor = "#FFFFFF";
-										s.style.color = "#343A40";
-									});
-
-									const target = e.currentTarget;
-									target.style.backgroundColor = "#343A40";
-									target.style.color = "#FFFFFF";
-								},
-							},
-						],
-					}),
-					El({
-						element: "div",
-						innerText: "New Balance",
-						className:
-							"flex justify-center items-center font-semibold text-[16px] text-[#343A40] text-nowrap border-[2px] border-[#343A40] hover:bg-[#343A40] hover:text-[#FFFFFF] cursor-pointer rounded-[25px] p-[10px] pl-[20px] pr-[20px] brands",
-						eventListener: [
-							{
-								event: "click",
-								callback: (e) => {
-									const allBrands = document.querySelectorAll(".brands");
-
-									allBrands.forEach((s) => {
-										s.style.backgroundColor = "#FFFFFF";
-										s.style.color = "#343A40";
-									});
-
-									const target = e.currentTarget;
-									target.style.backgroundColor = "#343A40";
-									target.style.color = "#FFFFFF";
-								},
-							},
-						],
-					}),
-					El({
-						element: "div",
-						innerText: "Converse",
-						className:
-							"flex justify-center items-center font-semibold text-[16px] text-[#343A40] border-[2px] border-[#343A40] hover:bg-[#343A40] hover:text-[#FFFFFF] cursor-pointer rounded-[25px] p-[10px] pl-[20px] pr-[20px] brands",
-						eventListener: [
-							{
-								event: "click",
-								callback: (e) => {
-									const allBrands = document.querySelectorAll(".brands");
-
-									allBrands.forEach((s) => {
-										s.style.backgroundColor = "#FFFFFF";
-										s.style.color = "#343A40";
-									});
-
-									const target = e.currentTarget;
-									target.style.backgroundColor = "#343A40";
-									target.style.color = "#FFFFFF";
-								},
-							},
-						],
-					}),
-					El({
-						element: "div",
-						innerText: "Hushpuppies",
-						className:
-							"flex justify-center items-center font-semibold text-[16px] text-[#343A40] border-[2px] border-[#343A40] hover:bg-[#343A40] hover:text-[#FFFFFF] cursor-pointer rounded-[25px] p-[10px] pl-[20px] pr-[20px] brands",
-						eventListener: [
-							{
-								event: "click",
-								callback: (e) => {
-									const allBrands = document.querySelectorAll(".brands");
-
-									allBrands.forEach((s) => {
-										s.style.backgroundColor = "#FFFFFF";
-										s.style.color = "#343A40";
-									});
-
-									const target = e.currentTarget;
-									target.style.backgroundColor = "#343A40";
-									target.style.color = "#FFFFFF";
-								},
-							},
-						],
-					}),
-				],
+				className: "w-full flex gap-[12px] overflow-x-scroll brands-filter",
+				children: brands.map((brand) => BrandButton(brand)),
 			}),
 		],
 	});

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-.brands::-webkit-scrollbar {
+.brands-filter::-webkit-scrollbar {
 	display: none;
 }
 #product-container::-webkit-scrollbar {

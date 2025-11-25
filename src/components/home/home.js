@@ -1,4 +1,5 @@
 import { El } from "../../utils/el.js";
+import { store } from "../../utils/store.js";
 import { BrandFilter } from "./brand-filter.js";
 import { Footer } from "./footer.js";
 import { Header } from "./header.js";
@@ -10,10 +11,33 @@ export function HomePage() {
 		element: "div",
 		className:
 			"w-[428px] h-[926px] relative flex flex-col items-center justify-between gap-0 bg-[#ffffff] p-[32px] pt-[132px]",
-		restAttrs: {
-			id: "home",
-		},
+		restAttrs: { id: "home" },
 	});
-	home.append(Header(), SearchInput(), BrandFilter(), ProductList(), Footer());
+
+	const savedState = store.getState("homeState");
+
+	home.append(
+		Header(),
+		SearchInput(),
+		BrandFilter(savedState?.selectedBrands),
+		ProductList(savedState),
+		Footer()
+	);
+
+	// restore scroll ها
+	setTimeout(() => {
+		if (savedState?.scroll) {
+			document
+				.getElementById("product-container")
+				?.scrollTo(0, savedState.scroll);
+		}
+
+		if (savedState?.brandScroll) {
+			document
+				.querySelector(".brands-filter")
+				?.scrollTo(savedState.brandScroll, 0);
+		}
+	}, 5);
+
 	return home;
 }
