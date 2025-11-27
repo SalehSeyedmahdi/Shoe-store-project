@@ -7,6 +7,7 @@ import { FirstOnboarding } from "./components/onboarding/first-onboarding.js";
 import { FourthOnboarding } from "./components/onboarding/fourth-onboarding.js";
 import { SecondOnboarding } from "./components/onboarding/second-onboarding.js";
 import { ThirdOnboarding } from "./components/onboarding/third-onboarding.js";
+import { SearchPage } from "./components/search/search-page.js";
 import { SingleProductLogic } from "./components/single-product/single-product-logic.js";
 import "./style/style.css";
 
@@ -21,6 +22,7 @@ router.addRoute("/home", HomePage);
 router.addRoute("/product/:id", SingleProductLogic);
 router.addRoute("/login/login", LoginPage);
 router.addRoute("/login/signup", SignupPage);
+router.addRoute("/search", SearchPage);
 
 router.init(app);
 

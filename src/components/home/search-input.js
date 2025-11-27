@@ -1,4 +1,5 @@
 import { El } from "../../utils/el.js";
+import { router } from "../../utils/router.js";
 
 export function SearchInput() {
 	return El({
@@ -13,7 +14,7 @@ export function SearchInput() {
 						element: "img",
 						className: "w-[16px] h-[16px] absolute left-[40px]",
 						restAttrs: {
-							src: "../../../public/images/search.png",
+							src: "../../../public/images/search-input-icon.png",
 						},
 					}),
 					El({
@@ -24,7 +25,7 @@ export function SearchInput() {
 							{
 								event: "click",
 								callback: () => {
-									app.innerText = "";
+									router.navigate("/search");
 								},
 							},
 						],
