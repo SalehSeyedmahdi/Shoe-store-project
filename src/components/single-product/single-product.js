@@ -1,5 +1,5 @@
 import { El } from "../../utils/el";
-import { HomePage } from "../home/home.js";
+import { router } from "../../utils/router.js";
 import { addToCart } from "./post-cart.js";
 
 export function SingleProductPage(imageURL, name, price) {
@@ -19,8 +19,7 @@ export function SingleProductPage(imageURL, name, price) {
 					{
 						event: "click",
 						callback: () => {
-							app.innerText = "";
-							app.append(HomePage());
+							router.navigate("/home");
 						},
 					},
 				],

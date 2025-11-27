@@ -1,5 +1,5 @@
 import { El } from "../../utils/el.js";
-import { LoginPage } from "../login/login-page.js";
+import { router } from "../../utils/router.js";
 
 export function FifthOnboarding() {
 	return El({
@@ -45,7 +45,7 @@ export function FifthOnboarding() {
 									{
 										event: "click",
 										callback: () => {
-											(app.innerText = ""), app.append(LoginPage());
+											router.navigate("login/login");
 										},
 									},
 								],

@@ -1,7 +1,16 @@
 import { El } from "../../utils/el.js";
-import { FourthOnboarding } from "./fourth-onboarding.js";
+import { router } from "../../utils/router.js";
 
 export function ThirdOnboarding() {
+	const token = localStorage.getItem("token");
+	if (token) {
+		router.navigate("/home");
+		return;
+	}
+	if (!token) {
+		router.navigate("/login/login");
+		return;
+	}
 	return El({
 		element: "div",
 		className:
@@ -45,7 +54,7 @@ export function ThirdOnboarding() {
 									{
 										event: "click",
 										callback: () => {
-											(app.innerText = ""), app.append(FourthOnboarding());
+											router.navigate("/onboarding/fourth");
 										},
 									},
 								],

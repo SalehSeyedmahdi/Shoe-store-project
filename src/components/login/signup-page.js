@@ -1,6 +1,6 @@
 import { El } from "../../utils/el.js";
+import { router } from "../../utils/router.js";
 import { SignupLogic } from "../login/signup-logic.js";
-import { LoginPage } from "./login-page.js";
 
 export function SignupPage() {
 	return El({
@@ -26,7 +26,7 @@ export function SignupPage() {
 							{
 								event: "click",
 								callback: () => {
-									(app.innerText = ""), app.append(LoginPage());
+									router.navigate("/login/login");
 								},
 							},
 						],
@@ -101,10 +101,24 @@ export function SignupPage() {
 											El({
 												element: "img",
 												className:
-													"w-[17px] h-[17px] absolute right-4 opacity-50",
+													"w-[17px] h-[17px] absolute right-4 opacity-50 cursor-pointer",
 												restAttrs: {
 													src: "../../../public/images/eye-slash-fill.png",
 												},
+												eventListener: [
+													{
+														event: "click",
+														callback: () => {
+															const passwordInput =
+																document.getElementById("password");
+															if (passwordInput.type === "password") {
+																passwordInput.type = "text";
+															} else {
+																passwordInput.type = "password";
+															}
+														},
+													},
+												],
 											}),
 										],
 									}),
@@ -117,7 +131,7 @@ export function SignupPage() {
 											{
 												event: "click",
 												callback: () => {
-													(app.innerText = ""), app.append(LoginPage());
+													router.navigate("/login/login");
 												},
 											},
 										],

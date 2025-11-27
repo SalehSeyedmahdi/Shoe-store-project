@@ -26,12 +26,6 @@ export function HomePage() {
 
 	// restore scroll ها
 	setTimeout(() => {
-		if (savedState?.scroll) {
-			document
-				.getElementById("product-container")
-				?.scrollTo(0, savedState.scroll);
-		}
-
 		if (savedState?.brandScroll) {
 			document
 				.querySelector(".brands-filter")

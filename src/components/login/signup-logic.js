@@ -1,5 +1,4 @@
 import { El } from "../../utils/el.js";
-import { LoginPage } from "./login-page.js";
 
 export function SignupLogic() {
 	const userName = document.getElementById("username");
@@ -66,8 +65,7 @@ export function SignupLogic() {
 				}
 				const response = await data.json();
 				console.log(response);
-				app.innerText = "";
-				app.append(LoginPage());
+				router.navigate("/login/login");
 			} catch (error) {
 				console.error(error);
 				requestError();

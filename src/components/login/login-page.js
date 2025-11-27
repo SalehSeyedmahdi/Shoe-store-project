@@ -1,7 +1,6 @@
 import { El } from "../../utils/el.js";
-import { ThirdOnboarding } from "../onboarding/third-onboarding.js";
+import { router } from "../../utils/router.js";
 import { LoginLogic } from "./login-logic.js";
-import { SignupPage } from "./signup-page.js";
 
 export function LoginPage() {
 	return El({
@@ -27,7 +26,7 @@ export function LoginPage() {
 							{
 								event: "click",
 								callback: () => {
-									(app.innerText = ""), app.append(ThirdOnboarding());
+									router.navigate("/onboarding/third");
 								},
 							},
 						],
@@ -102,10 +101,24 @@ export function LoginPage() {
 											El({
 												element: "img",
 												className:
-													"w-[17px] h-[17px] absolute right-4 opacity-50",
+													"w-[17px] h-[17px] absolute right-4 opacity-50 cursor-pointer",
 												restAttrs: {
 													src: "../../../public/images/eye-slash-fill.png",
 												},
+												eventListener: [
+													{
+														event: "click",
+														callback: () => {
+															const passwordInput =
+																document.getElementById("password");
+															if (passwordInput.type === "password") {
+																passwordInput.type = "text";
+															} else {
+																passwordInput.type = "password";
+															}
+														},
+													},
+												],
 											}),
 										],
 									}),
@@ -118,7 +131,7 @@ export function LoginPage() {
 											{
 												event: "click",
 												callback: () => {
-													(app.innerText = ""), app.append(SignupPage());
+													router.navigate("/login/signup");
 												},
 											},
 										],

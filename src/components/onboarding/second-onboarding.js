@@ -1,7 +1,11 @@
 import { El } from "../../utils/el.js";
-import { ThirdOnboarding } from "./third-onboarding.js";
+import { router } from "../../utils/router.js";
 
 export function SecondOnboarding() {
+	if (localStorage.getItem("secondonboarding") === "true") {
+		router.navigate("/onboarding/third");
+		return;
+	}
 	const container = El({
 		element: "div",
 		className:
@@ -31,10 +35,9 @@ export function SecondOnboarding() {
 			}),
 		],
 	});
-	function changePage() {
-		app.innerText = "";
-		app.append(ThirdOnboarding());
-	}
-	setTimeout(changePage, 5000);
+	localStorage.setItem("secondonboarding", "true");
+	setTimeout(() => {
+		router.navigate("/onboarding/third");
+	}, 5000);
 	return container;
 }

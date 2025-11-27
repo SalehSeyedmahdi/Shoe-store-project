@@ -1,5 +1,5 @@
 import { El } from "../../utils/el.js";
-import { HomePage } from "../home/home.js";
+import { router } from "../../utils/router.js";
 
 export function LoginLogic() {
 	const userName = document.getElementById("username");
@@ -68,8 +68,7 @@ export function LoginLogic() {
 				console.log(response);
 				localStorage.setItem("token", response.token);
 				localStorage.setItem("username", response.user.username);
-				app.innerText = "";
-				app.append(HomePage());
+				router.navigate("/home");
 			} catch (error) {
 				console.error(error);
 				requestError();

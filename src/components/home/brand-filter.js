@@ -42,12 +42,6 @@ export function BrandFilter(selectedBrand) {
 						// اگر همین برند است کاری نکن
 						if (name === store.getState("filteredBrand")) return;
 
-						// ریست اسکرول Home
-						store.setState("homeState", {
-							scroll: null,
-							brandScroll: null,
-						});
-
 						// reset کردن همه دکمه‌ها
 						document.querySelectorAll(".brands").forEach((b) => {
 							b.style.backgroundColor = "#FFFFFF";

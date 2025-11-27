@@ -1,4 +1,5 @@
 import { El } from "../../utils/el.js";
+import { router } from "../../utils/router.js";
 import { store } from "../../utils/store.js";
 import { SingleProductLogic } from "../single-product/single-product-logic.js";
 
@@ -7,15 +8,13 @@ export function ProductList() {
 		element: "div",
 		className:
 			"w-[428px] grid grid-cols-2 gap-y-[24px] gap-[16px] pr-[24px] pl-[24px] overflow-y-scroll mt-[24px] mb-[32px]",
-		restAttrs: {
-			id: "product-container",
-		},
+		restAttrs: { id: "product-container" },
 	});
 
 	async function renderList() {
 		const brand = store.getState("filteredBrand");
 
-		let url = "http://localhost:3000/sneaker?page=1&limit=14";
+		let url = "http://localhost:3000/sneaker?page=1&limit=42";
 
 		if (brand && brand !== "All") {
 			url += `&brands=${brand.toUpperCase()}`;
@@ -29,12 +28,25 @@ export function ProductList() {
 			},
 		});
 
+		if (data.status === 401 || data.status === 403) {
+			localStorage.removeItem("token");
+			router.navigate("/login/login");
+			return;
+		}
+
 		const response = await data.json();
 		const products = response.data;
 
+		// پاک کردن لیست قبلی
 		container.innerHTML = "";
+		container.scrollTop = 0; // ریست واقعی
+		store.setState("homeState", {
+			...store.getState("homeState"),
+			scroll: 0,
+		});
 
-		products.forEach((item) => {
+		// ساخت کارت‌ها
+		products.map((item) => {
 			const card = El({
 				element: "div",
 				className:
@@ -44,7 +56,6 @@ export function ProductList() {
 					{
 						event: "click",
 						callback: () => {
-							localStorage.setItem("selectedItemId", item.id);
 							store.setState("homeState", {
 								selectedBrands: store.getState("filteredBrand"),
 								scroll: container.scrollTop,
@@ -84,24 +95,13 @@ export function ProductList() {
 
 			container.append(card);
 		});
-
-		// بازگردانی اسکرول فقط یک بار — هنگام بازگشت از SingleProduct
-		const saved = store.getState("homeState");
-		if (saved && typeof saved.scroll === "number") {
-			container.scrollTo(0, saved.scroll);
-		}
 	}
 
-	// اجرا
+	// اجرای اولیه
 	renderList();
 
-	// reactive بودن
+	// reactive بودن — تغییر فیلتر برند
 	store.subscribe("filteredBrand", () => {
-		// ریست اسکرول هنگام تغییر فیلتر
-		store.setState("homeState", {
-			scroll: null,
-			brandScroll: null,
-		});
 		renderList();
 	});
 
