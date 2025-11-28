@@ -1,6 +1,7 @@
 import { LoginPage } from "../src/components/login/login-page.js";
 import { SignupPage } from "../src/components/login/signup-page.js";
 import { router } from "../src/utils/router.js";
+import { CartPage } from "./components/cart/cart.js";
 import { HomePage } from "./components/home/home.js";
 import { FifthOnboarding } from "./components/onboarding/fifth-onboarding.js";
 import { FirstOnboarding } from "./components/onboarding/first-onboarding.js";
@@ -23,6 +24,7 @@ router.addRoute("/product/:id", SingleProductLogic);
 router.addRoute("/login/login", LoginPage);
 router.addRoute("/login/signup", SignupPage);
 router.addRoute("/search", SearchPage);
+router.addRoute("/cart", CartPage);
 
 router.init(app);
 

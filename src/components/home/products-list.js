@@ -37,15 +37,13 @@ export function ProductList() {
 		const response = await data.json();
 		const products = response.data;
 
-		// پاک کردن لیست قبلی
 		container.innerHTML = "";
-		container.scrollTop = 0; // ریست واقعی
+		container.scrollTop = 0;
 		store.setState("homeState", {
 			...store.getState("homeState"),
 			scroll: 0,
 		});
 
-		// ساخت کارت‌ها
 		products.map((item) => {
 			const card = El({
 				element: "div",
@@ -97,10 +95,8 @@ export function ProductList() {
 		});
 	}
 
-	// اجرای اولیه
 	renderList();
 
-	// reactive بودن — تغییر فیلتر برند
 	store.subscribe("filteredBrand", () => {
 		renderList();
 	});

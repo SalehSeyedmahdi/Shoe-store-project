@@ -6,3 +6,6 @@
 #product-container::-webkit-scrollbar {
 	display: none;
 }
+.order-list::-webkit-scrollbar {
+	display: none;
+}

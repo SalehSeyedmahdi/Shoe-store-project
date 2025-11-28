@@ -1,7 +1,7 @@
 import { El } from "../../utils/el.js";
 import { router } from "../../utils/router.js";
 
-export function Footer() {
+export function CartFooter() {
 	return El({
 		element: "div",
 		className:
@@ -10,42 +10,42 @@ export function Footer() {
 			El({
 				element: "img",
 				className: "w-[29px] h-[38px] cursor-pointer",
-				restAttrs: {
-					src: "../../../public/images/home.png",
-				},
-			}),
-			El({
-				element: "img",
-				className: "w-[29px] h-[38px] cursor-pointer",
 				eventListener: [
 					{
 						event: "click",
 						callback: () => {
-							router.navigate("/cart");
+							router.navigate("/home");
 						},
 					},
 				],
 				restAttrs: {
-					src: "../../../public/images/cart.png",
+					src: "../../../public/images/white-home.png",
 				},
 			}),
 			El({
 				element: "img",
-				className: "w-[33px] h-[38px] cursor-pointer",
+				className: "w-[34px] h-[42px] cursor-pointer",
+				restAttrs: {
+					src: "../../../public/images/black-cart.png",
+				},
+			}),
+			El({
+				element: "img",
+				className: "w-[33px] h-[38px] cursor-pointer opacity-50",
 				restAttrs: {
 					src: "../../../public/images/orders.png",
 				},
 			}),
 			El({
 				element: "img",
-				className: "w-[33px] h-[38px] cursor-pointer",
+				className: "w-[33px] h-[38px] cursor-pointer opacity-50",
 				restAttrs: {
 					src: "../../../public/images/wallet.png",
 				},
 			}),
 			El({
 				element: "img",
-				className: "w-[33px] h-[38px] cursor-pointer",
+				className: "w-[33px] h-[38px] cursor-pointer opacity-50",
 				restAttrs: {
 					src: "../../../public/images/profile.png",
 				},

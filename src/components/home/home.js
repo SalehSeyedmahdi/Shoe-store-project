@@ -24,7 +24,7 @@ export function HomePage() {
 		Footer()
 	);
 
-	// restore scroll ها
+	//Scroll restore.
 	setTimeout(() => {
 		if (savedState?.brandScroll) {
 			document

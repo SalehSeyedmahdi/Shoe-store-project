@@ -14,7 +14,7 @@ export function BrandFilter(selectedBrand) {
 		"Hushpuppies",
 	];
 
-	// پیش‌فرض برای اولین بار
+	//First time
 	if (!selectedBrand) {
 		selectedBrand = "All";
 		store.setState("filteredBrand", "All");
@@ -39,20 +39,17 @@ export function BrandFilter(selectedBrand) {
 				{
 					event: "click",
 					callback: (e) => {
-						// اگر همین برند است کاری نکن
 						if (name === store.getState("filteredBrand")) return;
 
-						// reset کردن همه دکمه‌ها
 						document.querySelectorAll(".brands").forEach((b) => {
 							b.style.backgroundColor = "#FFFFFF";
 							b.style.color = "#343A40";
 						});
 
-						// فعال کردن این دکمه
 						e.currentTarget.style.backgroundColor = "#343A40";
 						e.currentTarget.style.color = "#FFFFFF";
 
-						// تغییر فیلتر برند → ProductList خودکار رفرش می‌شود
+						//Change filter brand.
 						store.setState("filteredBrand", name);
 					},
 				},
