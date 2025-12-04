@@ -60,7 +60,7 @@ export function ProductList() {
 								brandScroll:
 									document.querySelector(".brands-filter")?.scrollLeft || 0,
 							});
-
+							localStorage.setItem("selectedItemId", item.id);
 							SingleProductLogic(item.id);
 						},
 					},

@@ -1,4 +1,5 @@
 import { El } from "../../utils/el.js";
+import { router } from "../../utils/router.js";
 
 export function SignupLogic() {
 	const userName = document.getElementById("username");

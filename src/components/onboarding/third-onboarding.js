@@ -7,10 +7,6 @@ export function ThirdOnboarding() {
 		router.navigate("/home");
 		return;
 	}
-	if (!token) {
-		router.navigate("/login/login");
-		return;
-	}
 	return El({
 		element: "div",
 		className:
