@@ -12,7 +12,7 @@ export function SearchPage() {
 				className:
 					"w-[16px] h-[14px] absolute left-[24px] top-[20px] cursor-pointer",
 				restAttrs: {
-					src: "../../../public/images/direction.png",
+					src: "/assets/images/direction.png",
 				},
 				eventListener: [
 					{
@@ -31,7 +31,7 @@ export function SearchPage() {
 						element: "img",
 						className: "w-[18px] h-[18px] absolute left-[20px]",
 						restAttrs: {
-							src: "../../../public/images/search.png",
+							src: "/assets/images/search.png",
 						},
 					}),
 					El({
@@ -47,7 +47,7 @@ export function SearchPage() {
 						className:
 							"w-[18px] h-[18px] absolute right-4 opacity-50 cursor-pointer",
 						restAttrs: {
-							src: "../../../public/images/setting.png",
+							src: "/assets/images/setting.png",
 						},
 					}),
 				],

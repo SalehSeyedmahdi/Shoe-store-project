@@ -14,7 +14,7 @@ export function SearchInput() {
 						element: "img",
 						className: "w-[16px] h-[16px] absolute left-[40px]",
 						restAttrs: {
-							src: "../../../public/images/search-input-icon.png",
+							src: "/assets/images/search-input-icon.png",
 						},
 					}),
 					El({

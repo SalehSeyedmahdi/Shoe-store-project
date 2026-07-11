@@ -31,14 +31,14 @@ export function Header() {
 						element: "img",
 						className: "w-[24px] h-[22px] cursor-pointer",
 						restAttrs: {
-							src: "../../../public/images/bell.png",
+							src: "/assets/images/bell.png",
 						},
 					}),
 					El({
 						element: "img",
 						className: "w-[24px] h-[24px] cursor-pointer",
 						restAttrs: {
-							src: "../../../public/images/heart.png",
+							src: "/assets/images/heart.png",
 						},
 					}),
 				],

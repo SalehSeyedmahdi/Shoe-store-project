@@ -21,7 +21,7 @@ export function HomePage() {
 		SearchInput(),
 		BrandFilter(savedState?.selectedBrands),
 		ProductList(savedState),
-		Footer()
+		Footer(),
 	);
 
 	//Scroll restore.

@@ -16,7 +16,7 @@ export function ThirdOnboarding() {
 				element: "img",
 				className: "w-full h-[602px]",
 				restAttrs: {
-					src: "../../../public/images/third-onboarding.jpg",
+					src: "/assets/images/third-onboarding.jpg",
 				},
 			}),
 			El({
@@ -38,7 +38,7 @@ export function ThirdOnboarding() {
 								element: "img",
 								className: "w-[102px] h-[23px]",
 								restAttrs: {
-									src: "../../../public/images/first-swiper.png",
+									src: "/assets/images/first-swiper.png",
 								},
 							}),
 							El({

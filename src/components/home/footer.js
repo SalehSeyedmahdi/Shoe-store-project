@@ -11,7 +11,7 @@ export function Footer() {
 				element: "img",
 				className: "w-[29px] h-[38px] cursor-pointer",
 				restAttrs: {
-					src: "../../../public/images/home.png",
+					src: "/assets/images/home.png",
 				},
 			}),
 			El({
@@ -26,28 +26,28 @@ export function Footer() {
 					},
 				],
 				restAttrs: {
-					src: "../../../public/images/cart.png",
+					src: "/assets/images/cart.png",
 				},
 			}),
 			El({
 				element: "img",
 				className: "w-[33px] h-[38px] cursor-pointer",
 				restAttrs: {
-					src: "../../../public/images/orders.png",
+					src: "/assets/images/orders.png",
 				},
 			}),
 			El({
 				element: "img",
 				className: "w-[33px] h-[38px] cursor-pointer",
 				restAttrs: {
-					src: "../../../public/images/wallet.png",
+					src: "/assets/images/wallet.png",
 				},
 			}),
 			El({
 				element: "img",
 				className: "w-[33px] h-[38px] cursor-pointer",
 				restAttrs: {
-					src: "../../../public/images/profile.png",
+					src: "/assets/images/profile.png",
 				},
 			}),
 		],
