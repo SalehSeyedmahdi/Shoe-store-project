@@ -7,7 +7,7 @@ export function OrderList() {
 			"w-[428px] flex flex-col items-center gap-[15px] bg-[#FFFFFF] p-[24px] overflow-y-scroll pb-[180px] order-list",
 	});
 
-	const getOrders_URL = "https://api.noroff.dev/api/v1/online-shop/orders";
+	const getOrders_URL = "https://shoea-backend.onrender.com/cart";
 	async function fetchOrders() {
 		const data = await fetch(getOrders_URL, {
 			method: "GET",
