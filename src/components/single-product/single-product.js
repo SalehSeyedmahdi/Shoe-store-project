@@ -24,7 +24,7 @@ export function SingleProductPage(imageURL, name, price) {
 					},
 				],
 				restAttrs: {
-					src: "../../../public/images/arrow-left-short.svg",
+					src: "/assets/svg/arrow-left-short.svg",
 				},
 			}),
 			El({
@@ -56,7 +56,7 @@ export function SingleProductPage(imageURL, name, price) {
 										element: "img",
 										className: "w-[32px] h-[32px] cursor-pointer",
 										restAttrs: {
-											src: "../../../public/images/heart-inside.png",
+											src: "/assets/images/heart-inside.png",
 										},
 									}),
 								],
@@ -79,7 +79,7 @@ export function SingleProductPage(imageURL, name, price) {
 												element: "img",
 												className: "w-[24px] h-[24px]",
 												restAttrs: {
-													src: "../../../public/images/star-rate.png",
+													src: "/assets/images/star-rate.png",
 												},
 											}),
 											El({
@@ -397,7 +397,7 @@ export function SingleProductPage(imageURL, name, price) {
 											},
 										],
 										restAttrs: {
-											src: "../../../public/images/minus.png",
+											src: "/assets/images/minus.png",
 										},
 									}),
 									El({
@@ -435,7 +435,7 @@ export function SingleProductPage(imageURL, name, price) {
 											},
 										],
 										restAttrs: {
-											src: "../../../public/images/plus.png",
+											src: "/assets/images/plus.png",
 										},
 									}),
 								],
@@ -480,7 +480,7 @@ export function SingleProductPage(imageURL, name, price) {
 										element: "img",
 										className: "w-[20px] h-[20px]",
 										restAttrs: {
-											src: "../../../public/images/shopping-cart.png",
+											src: "/assets/images/shopping-cart.png",
 										},
 									}),
 									El({

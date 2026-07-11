@@ -11,7 +11,7 @@ export function FifthOnboarding() {
 				element: "img",
 				className: "w-full h-[602px]",
 				restAttrs: {
-					src: "../../../public/images/fifth-onboarding.jpg",
+					src: "/assets/images/fifth-onboarding.jpg",
 				},
 			}),
 			El({
@@ -33,7 +33,7 @@ export function FifthOnboarding() {
 								element: "img",
 								className: "w-[102px] h-[23px]",
 								restAttrs: {
-									src: "../../../public/images/third-swiper.png",
+									src: "/assets/images/third-swiper.png",
 								},
 							}),
 							El({

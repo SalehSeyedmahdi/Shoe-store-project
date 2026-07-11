@@ -14,7 +14,7 @@ export function CartHeader() {
 						element: "img",
 						className: "w-[16px] h-[25px]",
 						restAttrs: {
-							src: "../../../public/images/black-logo.png",
+							src: "/assets/images/black-logo.png",
 						},
 					}),
 					El({
@@ -28,7 +28,7 @@ export function CartHeader() {
 				element: "img",
 				className: "w-[35px] h-[35px] cursor-pointer",
 				restAttrs: {
-					src: "../../../public/images/search-input-icon.png",
+					src: "/assets/images/search-input-icon.png",
 				},
 			}),
 		],

@@ -24,7 +24,7 @@ export function FirstOnboarding() {
 								element: "img",
 								className: "w-[26.54px] h-[39.93px]",
 								restAttrs: {
-									src: "../../../public/images/white-logo.png",
+									src: "/assets/images/white-logo.png",
 								},
 							}),
 						],
@@ -40,7 +40,7 @@ export function FirstOnboarding() {
 				element: "img",
 				className: "w-[48px] h-[48px]",
 				restAttrs: {
-					src: "../../../public/images/loading.svg",
+					src: "/assets/svg/loading.svg",
 				},
 			}),
 		],

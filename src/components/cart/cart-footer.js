@@ -19,35 +19,35 @@ export function CartFooter() {
 					},
 				],
 				restAttrs: {
-					src: "../../../public/images/white-home.png",
+					src: "/assets/images/white-home.png",
 				},
 			}),
 			El({
 				element: "img",
 				className: "w-[34px] h-[42px] cursor-pointer",
 				restAttrs: {
-					src: "../../../public/images/black-cart.png",
+					src: "/assets/images/black-cart.png",
 				},
 			}),
 			El({
 				element: "img",
 				className: "w-[33px] h-[38px] cursor-pointer opacity-50",
 				restAttrs: {
-					src: "../../../public/images/orders.png",
+					src: "/assets/images/orders.png",
 				},
 			}),
 			El({
 				element: "img",
 				className: "w-[33px] h-[38px] cursor-pointer opacity-50",
 				restAttrs: {
-					src: "../../../public/images/wallet.png",
+					src: "/assets/images/wallet.png",
 				},
 			}),
 			El({
 				element: "img",
 				className: "w-[33px] h-[38px] cursor-pointer opacity-50",
 				restAttrs: {
-					src: "../../../public/images/profile.png",
+					src: "/assets/images/profile.png",
 				},
 			}),
 		],

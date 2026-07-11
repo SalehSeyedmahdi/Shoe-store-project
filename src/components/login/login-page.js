@@ -20,7 +20,7 @@ export function LoginPage() {
 						className:
 							"w-[16px] h-[14px] absolute left-[24px] top-[20px] cursor-pointer",
 						restAttrs: {
-							src: "../../../public/images/direction.png",
+							src: "/assets/images/direction.png",
 						},
 						eventListener: [
 							{
@@ -35,7 +35,7 @@ export function LoginPage() {
 						element: "img",
 						className: "w-[54px] h-[81px]",
 						restAttrs: {
-							src: "../../../public/images/black-logo.png",
+							src: "/assets/images/black-logo.png",
 						},
 					}),
 					El({
@@ -61,7 +61,7 @@ export function LoginPage() {
 												className:
 													"w-[14px] h-[14px] absolute left-4 opacity-50",
 												restAttrs: {
-													src: "../../../public/images/envelope-fill.png",
+													src: "/assets/images/envelope-fill.png",
 												},
 											}),
 											El({
@@ -85,7 +85,7 @@ export function LoginPage() {
 												className:
 													"w-[17px] h-[17px] absolute left-4 opacity-50",
 												restAttrs: {
-													src: "../../../public/images/lock-fill.png",
+													src: "/assets/images/lock-fill.png",
 												},
 											}),
 											El({
@@ -103,7 +103,7 @@ export function LoginPage() {
 												className:
 													"w-[17px] h-[17px] absolute right-4 opacity-50 cursor-pointer",
 												restAttrs: {
-													src: "../../../public/images/eye-slash-fill.png",
+													src: "/assets/images/eye-slash-fill.png",
 												},
 												eventListener: [
 													{

@@ -36,7 +36,7 @@ export function TotalPrice() {
 						element: "img",
 						className: "w-[18px] h-[18px]",
 						restAttrs: {
-							src: "../../../public/images/arrow-button.png",
+							src: "/assets/images/arrow-button.png",
 						},
 					}),
 				],
