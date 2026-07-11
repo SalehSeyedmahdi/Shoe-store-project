@@ -46,7 +46,7 @@ export function LoginLogic() {
 	} else {
 		clearErrors();
 
-		const Login_URL = "http://localhost:3000/auth/login";
+		const Login_URL = "https://shoea-backend.onrender.com/auth/login";
 
 		async function LoginFetch() {
 			const data = await fetch(Login_URL, {
