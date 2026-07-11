@@ -46,7 +46,7 @@ export function SignupLogic() {
 	} else {
 		clearErrors();
 
-		const Signup_URL = "http://localhost:3000/auth/signup";
+		const Signup_URL = "https://shoea-backend.onrender.com/auth/signup";
 
 		async function SignupFetch() {
 			const data = await fetch(Signup_URL, {

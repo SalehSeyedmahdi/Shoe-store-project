@@ -14,7 +14,7 @@ export function ProductList() {
 	async function renderList() {
 		const brand = store.getState("filteredBrand");
 
-		let url = "http://localhost:3000/sneaker?page=1&limit=42";
+		let url = "https://shoea-backend.onrender.com/sneaker?page=1&limit=42";
 
 		if (brand && brand !== "All") {
 			url += `&brands=${brand.toUpperCase()}`;

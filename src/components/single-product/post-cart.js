@@ -1,7 +1,7 @@
 import { El } from "../../utils/el.js";
 
 export function addToCart() {
-	const postCart_URL = "http://localhost:3000/cart";
+	const postCart_URL = "https://shoea-backend.onrender.com/cart";
 
 	const number = parseInt(document.querySelector(".count-products").innerText);
 	console.log(number);

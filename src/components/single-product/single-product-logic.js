@@ -1,7 +1,7 @@
 import { SingleProductPage } from "../single-product/single-product.js";
 
 export function SingleProductLogic(itemId) {
-	const id_URL = "http://localhost:3000/sneaker/item/" + itemId;
+	const id_URL = "https://shoea-backend.onrender.com/sneaker/item/" + itemId;
 	async function getOneSneaker() {
 		const data = await fetch(id_URL, {
 			method: "GET",
